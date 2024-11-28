@@ -21,8 +21,6 @@ spec:
       labels:
         role: api
     spec:
-      imagePullSecrets:
-        - name: ecr-registry-secret
       containers:
         - name: api
           image: public.ecr.aws/w3w7t4h3/backend:latest
@@ -55,3 +53,5 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
             successThreshold: 1
+      imagePullSecrets:
+        - name: ecr-registry-secret

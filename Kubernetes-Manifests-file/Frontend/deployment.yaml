@@ -21,14 +21,14 @@ spec:
       labels:
         role: frontend
     spec:
-      imagePullSecrets:
-        - name: ecr-registry-secret
       containers:
         - name: frontend
           image: public.ecr.aws/w3w7t4h3/frontend:latest
           imagePullPolicy: Always
           env:
             - name: REACT_APP_BACKEND_URL
-              value: "http://api:3500/api/tasks"
+              value: "http://task.akul.ca/api/tasks"
           ports:
             - containerPort: 3000
+      imagePullSecrets:
+        - name: ecr-registry-secret
