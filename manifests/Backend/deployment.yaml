@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
-  namespace: three-tier
+  namespace: capstone-gbc
   labels:
     role: api
     env: demo
@@ -23,11 +23,11 @@ spec:
     spec:
       containers:
         - name: api
-          image: public.ecr.aws/w3w7t4h3/backend:latest
+          image: 860476400418.dkr.ecr.us-east-1.amazonaws.com/tws-backend:latest
           imagePullPolicy: Always
           env:
             - name: MONGO_CONN_STR
-              value: mongodb://mongodb-svc:27017/todo?directConnection=true
+              value: mongodb://mongodb-svc:27017/todos?directConnection=true
             - name: MONGO_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -53,5 +53,3 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
             successThreshold: 1
-      imagePullSecrets:
-        - name: ecr-registry-secret

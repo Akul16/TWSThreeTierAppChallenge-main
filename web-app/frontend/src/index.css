@@ -17,7 +17,12 @@ body {
 }
 
 /* Optional: Add some more global styles for typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400;
 }
 
@@ -37,4 +42,3 @@ code {
     border-radius: 4px;
     font-family: 'Courier New', monospace;
 }
-

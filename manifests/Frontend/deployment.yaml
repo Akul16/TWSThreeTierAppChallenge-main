@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: three-tier
+  namespace: capstone-gbc
   labels:
     role: frontend
     env: demo
@@ -23,12 +23,10 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: public.ecr.aws/w3w7t4h3/frontend:latest
+          image: 860476400418.dkr.ecr.us-east-1.amazonaws.com/tws-frontend:latest
           imagePullPolicy: Always
           env:
             - name: REACT_APP_BACKEND_URL
-              value: "http://task.akul.ca/api/tasks"
+              value: "/api/tasks"
           ports:
             - containerPort: 3000
-      imagePullSecrets:
-        - name: ecr-registry-secret
