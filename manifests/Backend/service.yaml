@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: api
   namespace: capstone-gbc
+spec:
   ports:
     - port: 3500
       protocol: TCP
